@@ -48,7 +48,9 @@ public class Program
 
     static public void Init()
     {
-        algorithms.Add(new Bubble());
+        algorithms.Add(new BubbleSort());
+        algorithms.Add(new CocktailSort());
+        algorithms.Add(new InsertSort());
     }
 
 
@@ -63,9 +65,9 @@ public class Program
 
     static public void StartTest(AlgorithmBase algorithm)
     {
-        SortTimeTester sortTester = new SortTimeTester(new Bubble());
-        sortTester.MaxLimitQuantityElements = 10001;
-        sortTester.QuantityOfTest = 20;
+        SortTimeTester sortTester = new SortTimeTester(new BubbleSort());
+        sortTester.MaxLimitQuantityElements = 1001;
+        sortTester.QuantityOfTest = 100;
         sortTester.Step = 10;
         sortTester.Start();
     }

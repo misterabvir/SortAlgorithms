@@ -19,6 +19,7 @@ public class AlgorithmBase
     virtual public void Sort()
     {
         StartEvent?.Invoke(this);
+        SelectEvent?.Invoke(this, new SortEventHandlerArguments(){Index1 = -1, Index2 = -1});
         Items.Sort();
         EndEvent?.Invoke(this);
     }
@@ -39,6 +40,5 @@ public class AlgorithmBase
 public class SortEventHandlerArguments
 {
     public int Index1 { get; set; }
-    public int Index2 { get; set; }
-    
+    public int Index2 { get; set; }   
 }

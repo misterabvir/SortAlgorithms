@@ -1,6 +1,6 @@
 namespace AlgorithmBaseLib;
 
-public class Bubble : AlgorithmBase
+public class BubbleSort : AlgorithmBase
 {
 
     public override event SortHandler? SelectEvent;
@@ -26,7 +26,7 @@ public class Bubble : AlgorithmBase
          EndEvent?.Invoke(this);
     }
 
-    public Bubble()
+    public BubbleSort()
     {
         Name = "Bubble Sort";
     }
