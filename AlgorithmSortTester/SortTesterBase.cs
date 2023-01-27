@@ -10,8 +10,8 @@ public abstract class SortTesterBase
     {
         _algorithm = algorithm;
         _algorithm.SelectEvent += EventSelect;
-        _algorithm.BeforeSwapEvent += EventBeforeSwap;
-        _algorithm.AfterSwapEvent += EventAfterSwap;
+        _algorithm.BeforeSwopEvent += EventBeforeSwap;
+        _algorithm.AfterSwopEvent += EventAfterSwap;
         _algorithm.StartEvent += EventStartSort;
         _algorithm.EndEvent += EventEndSort;
     }

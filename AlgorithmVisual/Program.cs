@@ -51,6 +51,8 @@ public class Program
         algorithms.Add(new BubbleSort());
         algorithms.Add(new CocktailSort());
         algorithms.Add(new InsertSort());
+        algorithms.Add(new ShellSort());
+        algorithms.Add(new StoogeSort());
     }
 
 
@@ -65,9 +67,9 @@ public class Program
 
     static public void StartTest(AlgorithmBase algorithm)
     {
-        SortTimeTester sortTester = new SortTimeTester(new BubbleSort());
-        sortTester.MaxLimitQuantityElements = 1001;
-        sortTester.QuantityOfTest = 100;
+        SortTimeTester sortTester = new SortTimeTester(algorithm);
+        sortTester.MaxLimitQuantityElements = 1000;
+        sortTester.QuantityOfTest = 10;
         sortTester.Step = 10;
         sortTester.Start();
     }

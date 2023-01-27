@@ -26,7 +26,7 @@ public class SortTimeTester : SortTesterBase
         _info.Statistic.Clear();
         StatisticItem stat;
 
-        for (int i = 10; i < MaxLimitQuantityElements; i *= Step)
+        for (int i = 10; i <= MaxLimitQuantityElements; i *= Step)
         {
 
             stat = new StatisticItem();
@@ -35,8 +35,8 @@ public class SortTimeTester : SortTesterBase
             for (int j = 0; j < QuantityOfTest; j++)
             {
                 _algorithm.Items.AddRange(Generator.GetRandomInteger(count: i, limit: i * 10));
-                double time = TimeTesterFunc(() => _algorithm.Sort());
                 Console.Write($"\rTest {j + 1,2} for {i, -7} elements " + new string('.', j + 1));
+                double time = TimeTesterFunc(() => _algorithm.Sort());
                 _algorithm.Items.Clear();
                 stat.Times.Add(time);
                 stat.Swaps.Add(_countSwap);

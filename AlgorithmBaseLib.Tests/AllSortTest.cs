@@ -7,49 +7,92 @@ public class AllSortTest
     [TestMethod]
     public void BubbleSortTest()
     {
-        BubbleSort bubble = new BubbleSort();
+        BubbleSort sorter = new BubbleSort();
         List<int> list = new List<int>();
         Random rand = new Random();
         for (int i = 0; i < 1000; i++)
         {
             list.Add(rand.Next(0, 1000));
         }
-        bubble.Items.AddRange(list);
+        sorter.Items.AddRange(list);
 
         list.Sort();
-        bubble.Sort();
+        sorter.Sort();
 
         for (int i = 0; i < list.Count; i++)
         {
-            Assert.AreEqual(list[i], bubble.Items[i]);
+            Assert.AreEqual(list[i], sorter.Items[i]);
         }
     }
 
     [TestMethod]
     public void CocktailTest()
     {
-        CocktailSort shaker = new CocktailSort();
+        CocktailSort sorter = new CocktailSort();
         List<int> list = new List<int>();
         Random rand = new Random();
         for (int i = 0; i < 1000; i++)
         {
             list.Add(rand.Next(0, 1000));
         }
-        shaker.Items.AddRange(list);
+        sorter.Items.AddRange(list);
 
         list.Sort();
-        shaker.Sort();
+        sorter.Sort();
 
         for (int i = 0; i < list.Count; i++)
         {
-            Assert.AreEqual(list[i], shaker.Items[i]);
+            Assert.AreEqual(list[i], sorter.Items[i]);
         }
     }
 
     [TestMethod]
-    public void SortTest()
+    public void InsertSortTest()
     {
         InsertSort sorter = new InsertSort();
+        List<int> list = new List<int>();
+        Random rand = new Random();
+        for (int i = 0; i < 1000; i++)
+        {
+            list.Add(rand.Next(0, 1000));
+        }
+        sorter.Items.AddRange(list);
+
+        list.Sort();
+        sorter.Sort();
+
+        for (int i = 0; i < list.Count; i++)
+        {
+            Assert.AreEqual(list[i], sorter.Items[i]);
+        }
+    }
+
+    [TestMethod]
+    public void ShellSortTest()
+    {
+        ShellSort sorter = new ShellSort();
+        List<int> list = new List<int>();
+        Random rand = new Random();
+        for (int i = 0; i < 1000; i++)
+        {
+            list.Add(rand.Next(0, 1000));
+        }
+        sorter.Items.AddRange(list);
+
+        list.Sort();
+        sorter.Sort();
+
+        for (int i = 0; i < list.Count; i++)
+        {
+            Assert.AreEqual(list[i], sorter.Items[i]);
+        }
+    }
+
+    
+    [TestMethod]
+    public void StoogeSortTest()
+    {
+        StoogeSort sorter = new StoogeSort();
         List<int> list = new List<int>();
         Random rand = new Random();
         for (int i = 0; i < 1000; i++)
