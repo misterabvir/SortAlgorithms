@@ -14,7 +14,7 @@ public class InsertSort : AlgorithmBase
             for (int j = i; j > 0 && Items[j] < Items[j - 1]; j--)
             {
                 SelectEvent?.Invoke(this, new SortEventHandlerArguments() { Index1 = j, Index2 = j - 1 });
-                Swap(j, j - 1);
+                Swop(j, j - 1);
             }
         }
 

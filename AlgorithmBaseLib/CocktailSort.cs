@@ -19,7 +19,7 @@ public class CocktailSort : AlgorithmBase
                 SelectEvent?.Invoke(this, new SortEventHandlerArguments() { Index1 = i, Index2 = i + 1 });
                 if (Items[i] > Items[i + 1])
                 {
-                    Swap(i, i + 1);
+                    Swop(i, i + 1);
                 }
             }
             right--;
@@ -28,7 +28,7 @@ public class CocktailSort : AlgorithmBase
                 SelectEvent?.Invoke(this, new SortEventHandlerArguments() { Index1 = i, Index2 = i - 1 });
                 if (Items[i] < Items[i - 1])
                 {
-                    Swap(i, i - 1);
+                    Swop(i, i - 1);
                 }
             }
             left++;

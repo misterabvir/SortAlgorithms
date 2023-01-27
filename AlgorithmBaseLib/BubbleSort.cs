@@ -19,7 +19,7 @@ public class BubbleSort : AlgorithmBase
                 SelectEvent?.Invoke(this, new SortEventHandlerArguments() { Index1 = i, Index2 = i + 1 });
                 if (val1 > val2)
                 {
-                    Swap(i, i + 1);
+                    Swop(i, i + 1);
                 }
             }
         }
