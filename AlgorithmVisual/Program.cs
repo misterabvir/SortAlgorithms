@@ -17,16 +17,21 @@ public class Program
             Console.WriteLine("Possible options:");
             Console.WriteLine("\'test\': run test");
             Console.WriteLine("\'demo\': run demo");
+            return;
         }
-        else if ((args?[0] ?? "") == "demo")
+
+        if(args[0] == "demo")
         {
             StartDemo(algorithms[GetInput()]);
         }
-        else if ((args?[0] ?? "") == "test")
+        else if (args[0] == "test")
         {
             StartTest(algorithms[GetInput()]);
         }
     }
+
+
+
 
     static public int GetInput()
     {
@@ -50,27 +55,29 @@ public class Program
     {
         algorithms.Add(new BubbleSort());
         algorithms.Add(new CocktailSort());
+        algorithms.Add(new StoogeSort());
         algorithms.Add(new InsertSort());
         algorithms.Add(new ShellSort());
-        algorithms.Add(new StoogeSort());
+        algorithms.Add(new QuickSort());
+        algorithms.Add(new GnomeSort());
     }
 
 
-    static public void StartDemo(AlgorithmBase algorithm)
+    static public void StartDemo(AlgorithmBase algorithm, int timeSpan = 500, int countOfElements = 10, int limits = 100)
     {
         SortDemo sortDemo = new SortDemo(algorithm);
-        sortDemo.MaxLimitValue = 100;
-        sortDemo.QuantityOfElements = 10;
-        sortDemo.TimeSpan = 500;
+        sortDemo.MaxLimitValue = limits;
+        sortDemo.QuantityOfElements = countOfElements;
+        sortDemo.TimeSpan = timeSpan;
         sortDemo.Start();
     }
 
-    static public void StartTest(AlgorithmBase algorithm)
+    static public void StartTest(AlgorithmBase algorithm, int maxCountOfElements = 10000, int step = 10, int countOfTest = 10)
     {
         SortTimeTester sortTester = new SortTimeTester(algorithm);
-        sortTester.MaxLimitQuantityElements = 1000;
-        sortTester.QuantityOfTest = 10;
-        sortTester.Step = 10;
+        sortTester.MaxLimitQuantityElements = maxCountOfElements;
+        sortTester.QuantityOfTest = countOfTest;
+        sortTester.Step = step;
         sortTester.Start();
     }
 }

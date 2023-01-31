@@ -3,9 +3,11 @@
 ## Added: 
 1. Bubble Sort
 2. Cocktail Sort
-3. Insert Sort
-4. Shell Sort
-5. Stooge Sort
+3. Stooge Sort
+4. Insert Sort
+5. Shell Sort
+6. Quick Sort
+7. Gnome Sort
 
 - Added ms tests for sorts methods.
 
